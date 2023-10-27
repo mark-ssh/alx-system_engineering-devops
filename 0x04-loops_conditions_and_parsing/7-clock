@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script is displaying 1-20 with differents strings using case statement
+i=0
+while (( i <= 12 ))
+do
+  echo "Hour: $i"
+    j=1
+    while (( j <= 59 ))
+    do
+      echo $j
+      ((j++))
+    done
+  ((i++))
+done
