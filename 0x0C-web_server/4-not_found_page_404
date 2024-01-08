@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Install a nginx web server listening on port 80.
+#
+# When querying nginx at its root / with a GET
+# request, it returns a page that contains the string
+# 'Hello World'.
+#
+# Configures a directive of the Nginx server
+# to redirect to another page with 301 HTTP Code
+#
+# Configures a custom 404 page that contains the string
+# 'Ceci n'est pas une page'.
+
+sudo apt-get -y update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World" | sudo tee file /var/www/html/index.nginx-debian.html
+sudo sed -i '/server_name _;/a rewrite ^/redirect_me/ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" | sudo tee file /var/www/html/404.html
+sudo sed -i "/server_name _;/a error_page 404 /404.html;\nlocation = /404.html {\nroot /var/www/html;\ninternal;\n}" /etc/nginx/sites-available/default
+sudo service nginx restart
