@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# debugging nginx, listening on port 80 
+# The flag -s creates a symbolic link, -f deletes the existing file and replaces it
+
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
