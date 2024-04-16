@@ -70,7 +70,11 @@ Your UID is: 1000
 5. Navigated to: ``~/Virtualbox\ VMs/Documents_default_1492630824800_98335/Documents_default_1492630824800_98335.vbox-prev`` and located this line:
 
 ```
+<<<<<<< HEAD
   <Machine uuid="{db179e00-3ba1-4e08-a86a-ad7ab69ddac4}" name="Documents_default_1496197504242_4039" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2017-04-18T22:10:38Z">
+=======
+  <Machine uuid="{db179e00-3ba1-4e08-a86a-ad7ab69ddac4}" name="Documents_default_1496197504242_4039" OSType="Ubuntu_64" snapshotFolder="Snapshots" lastStateChange="2024-03-18T22:10:38Z">
+>>>>>>> e826785fbe193d4812266da0b6c723e00edc1661
 ```
 
 6. Navigated to: ``/home/concati/Documents/.vagrant/machines/default/virtualbox`` and ran this command: 
